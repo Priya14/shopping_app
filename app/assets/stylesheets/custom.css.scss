@@ -1,5 +1,8 @@
 @import "bootstrap";
-
+.navbar-fixed-top {
+  background-image: image-url("backdrop.gif");
+  height: 95px;
+}
 .subtitle {
   margin: 5em 0 2em 0;
 }

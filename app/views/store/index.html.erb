@@ -1,14 +1,24 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-<h1>Your Pragmatic Catalog</h1>
-<% @products.each do |product| %>
-  <div>
-    <%= image_tag(product.image_url) %>
-    <h3><%= product.title %></h3>
-    <%= sanitize(product.description) %>
-    <div>
-      <span><%= product.price %></span>
-    </div>
+<% if  can? :create, Product %>
+  <div class="pull-right">
+    <%= link_to "Add item", new_product_path, :class => 'btn btn-primary'%>
   </div>
 <% end %>
+<div class="col-lg-12">
+  <% @products.each do |product| %>
+    <div class="col-lg-6">
+      <%= image_tag product.image_url, :style => "width: 300px;height:400px;" %>
+      <h3><%= product.title %></h3>
+      <%= sanitize(product.description) %>
+      <div>
+        <span><%= product.price %></span>
+      </div>
+      <% if  can? :update, Product %>
+        <%= link_to 'Edit', edit_product_path(product) %>|
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

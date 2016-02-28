@@ -12,13 +12,13 @@
       <div class="navbar-inner">
         <nav>
           <div class="pull-left">
-            <%= link_to image_tag("buttercups_logo.png"), "https://www.buttercups.in" , :target => "_blank"%>
+            <%= link_to image_tag("buttercups_logo.png"), store_path %>
           </div>
           <ul class="nav pull-right">
             <% unless user_signed_in? %>
-              <li>  <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %></li>
+              <li>  <%= link_to 'Sign Up/Sign In', new_user_registration_path%></li>
             <% else %>
-              <li>  <%= link_to 'Logout', destroy_user_session_path, :data => {:method => :delete}, class: 'btn btn-primary btn-lg' %></li>
+              <li>  <%= link_to 'Logout', destroy_user_session_path, :data => {:method => :delete} %></li>
             <% end %>
           </ul>
         </nav>

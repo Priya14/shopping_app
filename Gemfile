@@ -28,7 +28,10 @@ gem 'pry', '~> 0.10.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Authentication
 gem 'devise', '~> 3.5', '>= 3.5.6'
-
+# Authorization
+gem 'cancancan', '~> 1.13', '>= 1.13.1'
+# Db seeding dump
+gem 'seed_dump'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
